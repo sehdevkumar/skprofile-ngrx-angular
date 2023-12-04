@@ -24,7 +24,9 @@ export class HomeComponent implements AfterViewInit {
       translateY:-100,
       ease:'power2.in',
       animationDuration:2000,
-      animationDelay:500
+      animationDelay:500,
+      onComplete:()=> {
+      }
     })
   }
 
