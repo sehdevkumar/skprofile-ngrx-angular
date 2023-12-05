@@ -1,6 +1,32 @@
-.landing-text{
-  text-indent:10rem;
-}
-.landing-text::first-letter  {
-    initial-letter: 40;
+.vertical-div {
+  position: relative;
+    z-index: 99999;
+
+
+  &::after {
+    z-index: 99999;
+    position: absolute;
+    content: "";
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+     background: rgb(145, 255, 0);
+
+    transform: translate(-50%,-50%);
+    left: 50%;
+  }
+
+  &::before {
+    z-index: 99999;
+
+    position: absolute;
+    content: "";
+     width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: rgb(145, 255, 0);
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 100%;
+  }
 }

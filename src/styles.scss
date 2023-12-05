@@ -37,7 +37,8 @@ $angular-layout-theme: mat.define-dark-theme((
 @include mat.all-component-themes($angular-layout-theme);
 
 /* You can add global styles to this file, and also import other style files */
-@import './assets/reset';
+@import './assets/scss/reset';
+@import './assets/scss/scrollbar';
 
 html, body { height: 100%; line-height: 1.5; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

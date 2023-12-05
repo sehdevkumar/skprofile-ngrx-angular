@@ -1,10 +1,7 @@
 <div class="flex flex-col gap-y-10 mt-10">
-     <button mat-button>
-        <mat-icon class="mat-18">home</mat-icon>
-     </button>
-
-   <button mat-button>
-       <mat-icon>dashboard</mat-icon>
-     </button>
-
+  @for (item of sideBars; track $index) {
+  <button [class.active]="item?.active" mat-button (click)="changeActivation(item)">
+    <mat-icon class="mat-18">{{item?.icon}}</mat-icon>
+  </button>
+  }
 </div>
