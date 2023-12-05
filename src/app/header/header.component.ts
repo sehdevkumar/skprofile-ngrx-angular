@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -10,5 +10,11 @@ import {MatToolbarModule} from '@angular/material/toolbar';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+  @Output() menuClicked: EventEmitter<void> = new EventEmitter()
+
+
+  onMenuClicked() {
+    this.menuClicked.emit()
+  }
 
 }

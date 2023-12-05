@@ -13,5 +13,5 @@ import { SidebarComponent } from './sidebar/sidebar.component';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'angular-layout';
+  isSidebarVisible=false
 }

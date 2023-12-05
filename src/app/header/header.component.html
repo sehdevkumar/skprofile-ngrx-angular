@@ -1,8 +1,10 @@
 <mat-toolbar>
-  <span>My App</span>
+  <div class="md:hidden">
+    <button mat-icon-button class="menu-icon" aria-label="icon-button" (click)="onMenuClicked()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  <span class="text-center place-self-center">My App</span>
   <span class="example-spacer"></span>
-  <!-- <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-    <mat-icon>favorite</mat-icon>
-  </button> -->
 
 </mat-toolbar>

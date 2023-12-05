@@ -1,11 +1,12 @@
 <main class="app-main">
-  <app-header></app-header>
+  <app-header (menuClicked)="isSidebarVisible = !isSidebarVisible"></app-header>
   <mat-drawer-container class="example-container">
-    <mat-drawer mode="side" opened>
+    <mat-drawer mode="side" [opened]="isSidebarVisible">
       <app-sidebar></app-sidebar>
     </mat-drawer>
     <mat-drawer-content style="background: #191919;">
-       <router-outlet></router-outlet>
+      <router-outlet></router-outlet>
     </mat-drawer-content>
   </mat-drawer-container>
 </main>
+
