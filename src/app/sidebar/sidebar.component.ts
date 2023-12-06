@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { SideBarType } from '../typings/app-typings';
+import { AppPath, SideBarType } from '../typings/app-typings';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -16,19 +17,24 @@ export class SidebarComponent {
     {
       icon:'home',
       name:'',
-      active:true
+      active:true,
+      path:AppPath.HOME
     },
      {
       icon:'dashboard',
       name:'',
-      active:false
+      active:false,
+      path:AppPath.DASHBOARD
     }
   ]
 
+  router = inject(Router)
 
   changeActivation(sideBar:SideBarType) {
     this.sideBars?.map(s=>s.active=false)
     sideBar.active = true
+
+   this.router.navigate([sideBar?.path])
   }
 
 }

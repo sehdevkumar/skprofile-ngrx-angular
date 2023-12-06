@@ -1,5 +1,5 @@
 <main class="app-main">
-  <app-header (menuClicked)="isSidebarVisible = !isSidebarVisible"></app-header>
+  <app-header (menuClicked)="menuClicked($event)"></app-header>
   <mat-drawer-container class="example-container">
     <mat-drawer mode="side" [opened]="isSidebarVisible">
       <app-sidebar></app-sidebar>
