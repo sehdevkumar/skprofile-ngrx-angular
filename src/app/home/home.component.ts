@@ -1,5 +1,6 @@
-import { AfterViewInit, Component } from '@angular/core'
-import gsap from 'gsap'
+import { AfterViewInit, Component, isDevMode } from '@angular/core'
+import gsap from 'gsap';
+
 @Component({
   selector: 'app-home',
   standalone: true,

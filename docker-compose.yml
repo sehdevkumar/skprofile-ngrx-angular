@@ -1,0 +1,12 @@
+# docker-compose
+version: '3.7'
+services:
+  angular-layout:
+    init: true
+    container_name: "angular-layout"
+    build: .
+    ports:
+      - 4200:4200
+    working_dir: /app-platform
+    volumes:
+      - ./:/app-platform

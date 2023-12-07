@@ -1,11 +1,11 @@
-import { AfterViewInit, Component, HostListener, inject } from '@angular/core'
+import { AfterViewInit, Component, HostListener, inject, isDevMode } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { RouterOutlet } from '@angular/router'
 import { MatSidenavModule } from '@angular/material/sidenav'
 import { HeaderComponent } from './header/header.component'
 import { SidebarComponent } from './sidebar/sidebar.component'
-import { Store } from '@ngrx/store'
-import { applicationsActions } from './store/actions'
+import { Store, StoreModule } from '@ngrx/store'
+import { applicationsActions } from './store/actions';
 
 @Component({
   selector: 'app-root',
