@@ -1,3 +1,4 @@
+#
 # Makefile for Angular Project
 #! Function to read Angular version
 define get_angular_version
@@ -63,6 +64,10 @@ test:
 
 lint:
 	$(shell ./linting.sh)
+
+rm-a-cache:
+	@echo "After Remove the angular Cache Run Again the Server"
+	$(shell rm -rf .angular/ )
 
 #! Docker Cli Commands
 dc-up:

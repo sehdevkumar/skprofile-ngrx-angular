@@ -6,6 +6,8 @@ import { HeaderComponent } from './header/header.component'
 import { SidebarComponent } from './sidebar/sidebar.component'
 import { Store, StoreModule } from '@ngrx/store'
 import { applicationsActions } from './store/actions';
+import { routerNavigatedAction, routerRequestAction } from '@ngrx/router-store'
+import { selectCurrentRoute } from './store/app-router-selector'
 
 @Component({
   selector: 'app-root',
@@ -24,6 +26,7 @@ export class AppComponent implements AfterViewInit {
   store = inject(Store)
 
   /**
+   *
    * A global Window Resize Event dispatch
    * @param event
    */
@@ -32,6 +35,11 @@ export class AppComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+    this.store.select(selectCurrentRoute
+
+).subscribe(res=> {
+       console.log(res)
+    })
   }
 
   isSidebarVisible = false
