@@ -1,4 +1,5 @@
 import { createActionGroup, emptyProps, props } from '@ngrx/store'
+import { GitHubUser } from '../typings/api-typings'
 
 export const applicationsActions = createActionGroup({
   source: 'Main Store',
@@ -7,7 +8,7 @@ export const applicationsActions = createActionGroup({
 
     // Git Hub Actions
     '[Git] Request Git':emptyProps(),
-    '[Git] Success Git': props<{gitResponse: any}>(),
+    '[Git] Success Git': props<{gitResponse: GitHubUser}>(),
     '[Git] Failed Git':props<{error:any}>()
 
 

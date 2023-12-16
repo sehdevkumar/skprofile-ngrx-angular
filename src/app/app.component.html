@@ -10,3 +10,6 @@
   </mat-drawer-container>
 </main>
 
+
+<mat-spinner  [diameter]="150" *ngIf="spinnerService.visibility | async">
+</mat-spinner>

@@ -1,5 +1,17 @@
-import { AfterViewInit, Component, isDevMode } from '@angular/core'
-import gsap from 'gsap';
+import {
+  AfterViewInit,
+  Component,
+  OnInit,
+  computed,
+  inject,
+  isDevMode,
+  signal,
+} from '@angular/core'
+import { Store } from '@ngrx/store'
+import gsap from 'gsap'
+import { applicationsActions } from '../store/actions'
+import { GitHubUser } from '../typings/api-typings'
+import { selectGitResponse } from '../store/reducers'
 
 @Component({
   selector: 'app-home',
@@ -8,7 +20,20 @@ import gsap from 'gsap';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
-export class HomeComponent implements AfterViewInit {
+export class HomeComponent implements OnInit, AfterViewInit {
+  store = inject(Store)
+
+  gitReponseData = signal<GitHubUser>({} as GitHubUser)
+
+  finalResponse = computed(() => this.gitReponseData())
+
+  ngOnInit(): void {
+    this.store.select(selectGitResponse).subscribe((data) => {
+      this.gitReponseData.set((data as unknown) as GitHubUser)
+    })
+    this.store?.dispatch(applicationsActions['[Git]RequestGit']())
+  }
+
   ngAfterViewInit(): void {
     this.onLoadAnimateText()
   }
@@ -28,7 +53,9 @@ export class HomeComponent implements AfterViewInit {
       scale: 0.8,
       translateY: -100,
       ease: 'power2.in',
-      onComplete: () => {loadDiv()},
+      onComplete: () => {
+        loadDiv()
+      },
     })
   }
 }

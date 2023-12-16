@@ -1,6 +1,8 @@
+import { GitHubUser } from "../typings/api-typings"
+
 export type ApplicationStateType = {
   event: Window | MouseEvent | null | Event
-  gitResponse: any | null
+  gitResponse: GitHubUser | null
   error: any | null
 }
 
