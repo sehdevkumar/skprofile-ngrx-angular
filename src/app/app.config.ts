@@ -8,6 +8,8 @@ import { StoreModule, provideStore } from '@ngrx/store'
 import { applicationFeatureKey, applicationReducer } from './store/reducers'
 import { StoreDevtoolsModule } from '@ngrx/store-devtools'
 import { StoreRouterConnectingModule, provideRouterStore, routerReducer } from '@ngrx/router-store'
+import { EffectsModule } from '@ngrx/effects'
+import { ApplicationEffects } from './store/effects'
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -17,6 +19,7 @@ export const appConfig: ApplicationConfig = {
     importProvidersFrom([
       StoreRouterConnectingModule.forRoot(),
       StoreModule.forRoot({router: routerReducer}),
+      EffectsModule.forRoot([ApplicationEffects]),
       StoreModule.forFeature(applicationFeatureKey, applicationReducer),
       StoreDevtoolsModule.instrument({
         maxAge: 25,

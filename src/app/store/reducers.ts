@@ -12,6 +12,26 @@ const applicationReducerFeature = createFeature({
         event,
       }
     }),
+
+    on(applicationsActions['[Git]RequestGit'], (state) => {
+      return {
+        ...state,
+      }
+    }),
+
+    on(applicationsActions['[Git]SuccessGit'], (state, { gitResponse }) => {
+      return {
+        ...state,
+        gitResponse,
+      }
+    }),
+
+    on(applicationsActions['[Git]FailedGit'], (state, { error }) => {
+      return {
+        ...state,
+        error,
+      }
+    }),
   ),
 })
 
@@ -19,4 +39,6 @@ export const {
   name: applicationFeatureKey,
   reducer: applicationReducer,
   selectEvent,
+  selectGitResponse,
+  selectError,
 } = applicationReducerFeature
