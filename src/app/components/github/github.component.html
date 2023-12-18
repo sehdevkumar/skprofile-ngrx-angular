@@ -1,0 +1,20 @@
+<div class="p-5 flex flex-col gap-y-4">
+  <p class="font-medium">GitHub Profile</p>
+      <img
+        class="w-60 object-cover rounded-full"
+        [src]="finalResponse?.avatar_url"
+        loading="lazy"
+      />
+
+      <div class="font-medium font-mono capitalize">
+         {{finalResponse?.bio}}
+      </div>
+      <div class="font-thin">Followers: <span class="font-semibold">{{finalResponse?.followers}}</span></div>
+
+      <div class="font-thin">Company: <span class="font-semibold">{{finalResponse?.company}}</span></div>
+
+      <div class="font-thin">Location: <span class="font-semibold capitalize">{{finalResponse?.location}}</span></div>
+
+      <div class="font-thin">Repos: <span class="font-semibold capitalize">{{finalResponse?.public_repos}}</span></div>
+      <div class="font-thin">Visit: <a href="{{finalResponse?.html_url}}" class="text-blue-500 capitalize" target="_blank">{{finalResponse?.html_url}}</a></div>
+</div>

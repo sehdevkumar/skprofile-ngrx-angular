@@ -1,17 +1,15 @@
 <div class="container p-10 grid grid-flow-row  justify-center  m-auto overflow-auto" style="height: calc(100vh - 65px);">
   <div
-    class="shadow-sm cards shadow-orange-900 p-5  flex flex-col gap-y-4 rounded"
+    class="shadow-sm cards shadow-amber-500 p-5  flex flex-col gap-y-4 rounded"
   >
-    <img
-      class="w-60 object-cover"
-      [src]="finalResponse()?.avatar_url"
-      loading="lazy"
-    />
+   <app-resume></app-resume>
+  </div>
+  <div class="w-1 h-52 vertical-div opacity-0  shadow-slate-300 bg-slate-500 justify-self-center rounded-sm"></div>
 
-    <div class="font-medium font-mono">
-       {{finalResponse()?.bio}}
-       {{finalResponse()?.followers}}
-    </div>
+   <div
+    class="shadow-sm cards shadow-amber-500 rounded"
+  >
+    <app-github [finalResponse]="finalResponse()"> </app-github>
   </div>
   <div class="w-1 h-52 vertical-div opacity-0  shadow-slate-300 bg-slate-500 justify-self-center rounded-sm"></div>
 </div>

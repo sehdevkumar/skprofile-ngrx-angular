@@ -12,11 +12,13 @@ import gsap from 'gsap'
 import { applicationsActions } from '../store/actions'
 import { GitHubUser } from '../typings/api-typings'
 import { selectGitResponse } from '../store/reducers'
+import { ResumeComponent } from '../components/resume/resume.component'
+import { GithubComponent } from '../components/github/github.component'
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [ResumeComponent,GithubComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
