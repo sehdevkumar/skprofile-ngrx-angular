@@ -3,6 +3,7 @@ import { Actions, createEffect, ofType } from '@ngrx/effects'
 import { applicationsActions } from './actions'
 import { Observable, catchError, map, mergeMap, of, switchMap } from 'rxjs'
 import { GitService } from '../services/git.service'
+import { ProjectsLits } from '../dashboard/projects-data'
 
 @Injectable()
 export class ApplicationEffects {
@@ -19,6 +20,28 @@ export class ApplicationEffects {
             (response) =>
               applicationsActions['[Git]SuccessGit']({
                 gitResponse:response?.body,
+              }),
+            catchError(async (e) =>
+              applicationsActions['[Git]FailedGit']({
+                error: e,
+              }),
+            ),
+          ),
+        )
+      }),
+    )
+  })
+
+
+   ProjectRequest$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(applicationsActions['[Project]Request']),
+      switchMap(() => {
+        return of(ProjectsLits).pipe(
+          map(
+            (response) =>
+              applicationsActions['[Project]Success']({
+                projectResponse:response,
               }),
             catchError(async (e) =>
               applicationsActions['[Git]FailedGit']({
