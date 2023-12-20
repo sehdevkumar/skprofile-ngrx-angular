@@ -9,4 +9,15 @@ export const ProjectsLits = [
 
 `,
   },
+
+  {
+    title: 'Websocket Connections Manager',
+    thumbnail: 'assets/images/d3chart_thumnail.png',
+    link: 'https://sk-socket-id.web.app/',
+    gitHubLink:
+      'https://github.com/sehdevkumar/websocket-instance-manager',
+    description: `Depending on your application's requirements, you might need to consider scaling your WebSocket server horizontally to handle a large number of connections. So this app can handle the multiples connections instances and emit data from client to Server.
+
+`,
+  }
 ]
