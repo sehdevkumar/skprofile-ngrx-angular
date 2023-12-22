@@ -16,13 +16,19 @@ export class SidebarComponent {
   sideBars:SideBarType[] = [
     {
       icon:'home',
-      name:'',
+      name:'Home',
       active:true,
       path:AppPath.HOME
     },
      {
       icon:'dashboard',
-      name:'',
+      name:'Projects',
+      active:false,
+      path:AppPath.DASHBOARD
+    },
+     {
+      icon:'style',
+      name:'Blogs',
       active:false,
       path:AppPath.DASHBOARD
     }

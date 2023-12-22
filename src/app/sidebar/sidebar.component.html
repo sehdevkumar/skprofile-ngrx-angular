@@ -1,7 +1,8 @@
 <div class="flex flex-col gap-y-10 mt-10">
   @for (item of sideBars; track $index) {
-  <button [class.active]="item?.active" mat-button (click)="changeActivation(item)">
+  <button style="justify-content: flex-start;" [class.active]="item?.active" mat-button (click)="changeActivation(item)">
     <mat-icon class="mat-18">{{item?.icon}}</mat-icon>
+    <span>{{item?.name}}</span>
   </button>
   }
 </div>

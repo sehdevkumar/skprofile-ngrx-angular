@@ -12,7 +12,7 @@ export const ProjectsLits = [
 
   {
     title: 'Websocket Connections Manager',
-    thumbnail: 'assets/images/d3chart_thumnail.png',
+    thumbnail: 'assets/images/websocket_manager_thumbnail.png',
     link: 'https://sk-socket-id.web.app/',
     gitHubLink:
       'https://github.com/sehdevkumar/websocket-instance-manager',
