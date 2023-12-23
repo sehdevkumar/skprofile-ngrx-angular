@@ -1,5 +1,5 @@
 import { createActionGroup, emptyProps, props } from '@ngrx/store'
-import { GitHubUser, ProjectResponse } from '../typings/api-typings'
+import { BlogResponse, GitHubUser, ProjectResponse } from '../typings/api-typings'
 
 export const applicationsActions = createActionGroup({
   source: 'Main Store',
@@ -15,5 +15,10 @@ export const applicationsActions = createActionGroup({
     '[Project] Request': emptyProps(),
     '[Project] Success': props<{ projectResponse: ProjectResponse[] }>(),
     '[Project] Failed': props<{ error: any }>(),
+
+     // Blogs  Actions
+    '[Blog] Request': emptyProps(),
+    '[Blog] Success': props<{ blogResponse: BlogResponse[] }>(),
+    '[Blog] Failed': props<{ error: any }>(),
   },
 })

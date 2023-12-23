@@ -1,0 +1,8 @@
+<div *ngIf="blogData.title" class="bg-stone-800 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+  <img [src]="blogData.thumbnail" loading="lazy" alt="Thumbnail" class="w-full h-48 object-cover">
+  <div class="p-4">
+    <h2 class="text-xl font-bold mb-2">{{ blogData.title }}</h2>
+    <p class="text-gray-200">{{ blogData.description }}</p>
+    <a [href]="blogData.blogLink" class="text-blue-500 hover:underline mt-2 block">Read more</a>
+  </div>
+</div>

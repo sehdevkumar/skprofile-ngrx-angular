@@ -10,5 +10,7 @@ export type SideBarType = {
 
 export enum AppPath  {
   HOME='home',
-  DASHBOARD='dashboard'
+  DASHBOARD='dashboard',
+  BLOGS='blogs'
+
 }

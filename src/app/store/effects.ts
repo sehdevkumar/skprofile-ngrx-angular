@@ -4,6 +4,7 @@ import { applicationsActions } from './actions'
 import { Observable, catchError, map, mergeMap, of, switchMap } from 'rxjs'
 import { GitService } from '../services/git.service'
 import { ProjectsLits } from '../dashboard/projects-data'
+import { Blogs } from '../blogs/blogs-data'
 
 @Injectable()
 export class ApplicationEffects {
@@ -42,6 +43,27 @@ export class ApplicationEffects {
             (response) =>
               applicationsActions['[Project]Success']({
                 projectResponse:response,
+              }),
+            catchError(async (e) =>
+              applicationsActions['[Git]FailedGit']({
+                error: e,
+              }),
+            ),
+          ),
+        )
+      }),
+    )
+  })
+
+  BlogRequest$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(applicationsActions['[Blog]Request']),
+      switchMap(() => {
+        return of(Blogs).pipe(
+          map(
+            (response) =>
+              applicationsActions['[Blog]Success']({
+                blogResponse:response,
               }),
             catchError(async (e) =>
               applicationsActions['[Git]FailedGit']({

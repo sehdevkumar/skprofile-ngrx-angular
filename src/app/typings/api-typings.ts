@@ -40,3 +40,11 @@ export type ProjectResponse = {
   gitHubLink: string
   description: string
 }
+
+
+export type BlogResponse = {
+  title:string;
+  thumbnail: string
+  blogLink: string
+  description: string
+}

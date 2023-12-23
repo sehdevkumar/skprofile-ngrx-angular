@@ -55,6 +55,28 @@ const applicationReducerFeature = createFeature({
         error,
       }
     }),
+     on(applicationsActions['[Blog]Request'], (state) => {
+      return {
+        ...state,
+      }
+    }),
+
+    on(
+      applicationsActions['[Blog]Success'],
+      (state, { blogResponse }) => {
+        return {
+          ...state,
+          blogResponse,
+        }
+      },
+    ),
+
+    on(applicationsActions['[Blog]Failed'], (state, { error }) => {
+      return {
+        ...state,
+        error,
+      }
+    }),
   ),
 })
 
@@ -62,7 +84,8 @@ export const {
   name: applicationFeatureKey,
   reducer: applicationReducer,
   selectEvent,
-  selectGitResponse,
   selectError,
+  selectGitResponse,
   selectProjectResponse,
+  selectBlogResponse,
 } = applicationReducerFeature

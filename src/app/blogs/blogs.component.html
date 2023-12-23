@@ -1,6 +1,6 @@
 <div class="container h-full overflow-auto p-4 gap-4 items-stretch inline-grid grid-cols-1 md:grid-cols-3 justify-items-center m-auto">
-   @for (item of projectData(); track $index) {
-     <app-project-card [projectData]="item"></app-project-card>
-   }
+   @for (item of blogData(); track $index) {
+      <app-blog-card  [blogData]="item"></app-blog-card>
+  }
 
 </div>
