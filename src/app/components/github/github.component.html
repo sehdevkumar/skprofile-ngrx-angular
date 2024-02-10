@@ -11,10 +11,10 @@
       </div>
       <div class="font-thin">Followers: <span class="font-semibold">{{finalResponse.followers}}</span></div>
 
-      <div class="font-thin">Company: <span class="font-semibold">{{finalResponse.company}}</span></div>
+      <div class="font-thin">Company: <a href="https://www.atai.ai/" class="font-semibold underline text-blue-500">{{finalResponse.company}}</a></div>
 
       <div class="font-thin">Location: <span class="font-semibold capitalize">{{finalResponse.location}}</span></div>
 
       <div class="font-thin">Repos: <span class="font-semibold capitalize">{{finalResponse.public_repos}}</span></div>
-      <div class="font-thin">Visit: <a href="{{finalResponse.html_url}}" class="text-blue-500 capitalize" target="_blank">{{finalResponse.html_url}}</a></div>
+      <div class="font-thin"><a href="{{finalResponse.html_url}}" class="text-blue-500 capitalize underline" target="_blank">Visit</a></div>
 </div>

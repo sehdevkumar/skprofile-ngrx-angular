@@ -28,4 +28,10 @@ export const Blogs: BlogResponse[] = [
     thumbnail: 'https://miro.medium.com/v2/resize:fit:720/format:webp/1*gABeP-qkqxfkWQxAhp7Diw.jpeg',
     description: 'The use case of Generic RxJS subscription/raising is to provide a way to handle different types of events in a modular and flexible way. By defining a generic event system using RxJS, events can be emitted and subscribed to across different parts of the application, without having to tightly couple them to each other.',
   },
+  {
+    title: 'Mastering Strategy Patterns with Compose and Pipe in JavaScript: A Fun Journey into Functional Programming',
+    blogLink: 'https://medium.com/@kumarsehdev600/mastering-strategy-patterns-with-compose-and-pipe-in-javascript-a-fun-journey-into-functional-67763d0043d8',
+    thumbnail: 'https://miro.medium.com/v2/resize:fit:828/format:webp/1*1EVa895kkSe3G7TWJGqOcw.png',
+    description: 'In the vast landscape of JavaScript, where paradigms collide and libraries flourish, mastering functional programming techniques becomes a superpower for developers. Today, we embark on an exciting journey exploring the synergy of strategy patterns, compose, and pipe functions. We’ll unleash the power of functional programming to create flexible and elegant solutions.',
+  },
 ]
